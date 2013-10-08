@@ -8,3 +8,5 @@ filetype plugin indent on
 
 " Powerline configs
 set laststatus=2
+
+" NERDTree Configs
