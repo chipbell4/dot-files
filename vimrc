@@ -13,3 +13,5 @@ filetype plugin indent on
 set laststatus=2
 
 " NERDTree Configs
+autocmd VimEnter * NERDTree " Always open NERDTree
+autocmd VimEnter * wincmd p " Put cursor in file, not dir tree
