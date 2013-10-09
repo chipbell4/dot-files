@@ -7,3 +7,6 @@
 [submodule "vim/bundle/colorschemes"]
 	path = vim/bundle/colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "vim/bundle/blade-syntax"]
+	path = vim/bundle/blade-syntax
+	url = https://github.com/xsbeats/vim-blade.git
