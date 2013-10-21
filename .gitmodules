@@ -10,3 +10,6 @@
 [submodule "vim/bundle/blade-syntax"]
 	path = vim/bundle/blade-syntax
 	url = https://github.com/xsbeats/vim-blade.git
+[submodule "vim/bundle/mustache"]
+	path = vim/bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git
