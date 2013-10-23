@@ -13,6 +13,22 @@ function push-key {
 	ssh $1 "echo '`cat ~/.ssh/id_rsa.pub`' >> ~/.ssh/authorized_keys"
 }
 
+function serve {
+	# specify the port as the first argument
+	# if no argument is specified, use 1337
+	local port="$1"
+	if [ -z "$port" ]; then
+		port="1337"
+	fi
+
+	if [ -z "$(php -v | grep 5.4)" ]; then 
+		# Don't have PHP 5.4 installed, so we use the Python server instead
+		python -m SimpleHTTPServer $port
+	else 
+		php -S localhost:$port
+	fi
+}
+
 PS1="\[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 # if i've defined a extra profile file, source that as well
