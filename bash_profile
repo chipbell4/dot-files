@@ -29,6 +29,11 @@ function serve {
 	fi
 }
 
+# add git completion
+if [ -f .bash/git-completion.bash ]; then
+	. .bash/git-completion.bash
+fi
+
 PS1="\[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 # if i've defined a extra profile file, source that as well
