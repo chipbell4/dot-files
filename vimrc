@@ -3,7 +3,7 @@ set number
 syntax on
 set shiftwidth=3
 set tabstop=3
-colo elflord
+colo koehler
 
 " Some custom commands that helps out
 command Q execute "qall"
