@@ -25,3 +25,15 @@ set laststatus=2
 " When I type <cntrl-P> to open a file, ignore these folders in the search
 set wildignore+=*/vendor/**
 set wildignore+=*/build/**
+
+" Linting stuff
+:function Lint()
+:if &ft == 'php'
+":!phpcs %
+:!php -l %
+:elseif &ft == 'javascript'
+:!jshint %
+:endif
+:endfunction
+
+:nnoremap L :call Lint()<CR>
