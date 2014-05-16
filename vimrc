@@ -5,6 +5,8 @@ set shiftwidth=3
 set tabstop=3
 colo koehler
 
+let mapleader = ","
+
 " Some custom commands that helps out
 command Q execute "qall"
 command W execute "wall"
@@ -29,11 +31,11 @@ set wildignore+=*/build/**
 " Linting stuff
 :function Lint()
 :if &ft == 'php'
-":!phpcs %
+":!phpcs --tab-width=0 %
 :!php -l %
 :elseif &ft == 'javascript'
 :!jshint %
 :endif
 :endfunction
 
-:nnoremap L :call Lint()<CR>
+:nnoremap <leader>l :call Lint()<CR>
