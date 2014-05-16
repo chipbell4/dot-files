@@ -39,3 +39,4 @@ set wildignore+=*/build/**
 :endfunction
 
 :nnoremap <leader>l :call Lint()<CR>
+:nnoremap <leader>; :exe PhpDoc()<CR>
