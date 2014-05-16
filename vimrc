@@ -38,5 +38,7 @@ set wildignore+=*/build/**
 :endif
 :endfunction
 
-:nnoremap <leader>l :call Lint()<CR>
-:nnoremap <leader>; :exe PhpDoc()<CR>
+:nnoremap <leader>l :exe Lint()<CR>
+:nnoremap <leader>d :exe PhpDoc()<CR>
+:nnoremap <leader>t :exe TestCurrentFile()<CR>
+:nnoremap <leader>T :exe AllTests()<CR>
