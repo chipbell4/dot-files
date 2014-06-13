@@ -31,8 +31,8 @@ set wildignore+=*/build/**
 " Linting stuff
 :function Lint()
 :if &ft == 'php'
-":!phpcs --tab-width=0 %
-:!php -l %
+:!phpcs --standard=psr2 %
+":!php -l %
 :elseif &ft == 'javascript'
 :!jshint %
 :endif
@@ -42,3 +42,5 @@ set wildignore+=*/build/**
 :nnoremap <leader>d :exe PhpDoc()<CR>
 :nnoremap <leader>t :exe TestCurrentFile()<CR>
 :nnoremap <leader>T :exe AllTests()<CR>
+
+au Filetype php setl et ts=4 sw=4
