@@ -44,3 +44,4 @@ PS1="\[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \
 if [ -f ~/.profile ]; then
 	source ~/.profile
 fi
+export HISTTIMEFORMAT="%d/%m/%y %T "
