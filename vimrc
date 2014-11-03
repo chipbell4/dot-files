@@ -27,20 +27,35 @@ set laststatus=2
 " When I type <cntrl-P> to open a file, ignore these folders in the search
 set wildignore+=*/vendor/**
 set wildignore+=*/build/**
+set wildignore+=*/node_modules/**
 
 " Linting stuff
 :function Lint()
 :if &ft == 'php'
-:!phpcs --standard=psr2 %
+:!phpcs --standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml %
 ":!php -l %
 :elseif &ft == 'javascript'
 :!jshint %
 :endif
 :endfunction
 
+" Use PSR2 for codesniffer
+let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml"
+
 :nnoremap <leader>l :exe Lint()<CR>
 :nnoremap <leader>d :exe PhpDoc()<CR>
 :nnoremap <leader>t :exe TestCurrentFile()<CR>
 :nnoremap <leader>T :exe AllTests()<CR>
 
+" Git commands
+:nnoremap <leader>gs :!git status<CR>
+:nnoremap <leader>gc :!git commit<CR>
+:nnoremap <leader>ga :!git add %<CR>
+
 au Filetype php setl et ts=4 sw=4
+
+" Don't run messdetector on save (default = 1)
+"let g:phpqa_messdetector_autorun = 0
+
+" Don't run codesniffer on save (default = 1)
+"let g:phpqa_codesniffer_autorun = 0
