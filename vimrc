@@ -40,13 +40,32 @@ set wildignore+=*/node_modules/**
 :endif
 :endfunction
 
+" Codecept run single function
+:function CodeceptSingle()
+:if &ft != 'php'
+:	return
+:endif
+" save our current line
+:let linenumber=line('.')
+" find the first function
+:?function
+" parse out the name
+:let tokens=split(getline('.'))
+:let dirty_function_name=get(tokens, index(tokens, 'function')+1, 'default')
+:let function_name_tokens=split(dirty_function_name, '(')
+:let function_name=get(function_name_tokens, 0)
+:execute '!ant codecept -Dtest=' . expand('%') . ':' . function_name
+:endfunction
+
 " Use PSR2 for codesniffer
 let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml"
 
+" PHP code helpers
 :nnoremap <leader>l :exe Lint()<CR>
 :nnoremap <leader>d :exe PhpDoc()<CR>
 :nnoremap <leader>t :exe TestCurrentFile()<CR>
 :nnoremap <leader>T :exe AllTests()<CR>
+:nnoremap <leader>cf :exe CodeceptSingle()<CR>
 
 " Git commands
 :nnoremap <leader>gs :!git status<CR>
