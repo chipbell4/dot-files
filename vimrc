@@ -6,7 +6,7 @@ set tabstop=3
 colo koehler
 set nowrap
 
-let mapleader = ","
+let mapleader = ","    
 
 " Some custom commands that helps out
 command Q execute "qall"
@@ -74,7 +74,7 @@ let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/c
 :nnoremap <leader>gc :!git commit<CR>
 :nnoremap <leader>ga :!git add %<CR>
 
-au Filetype php setl et ts=4 sw=4
+:set expandtab ts=4 sw=4
 
 " Don't run messdetector on save (default = 1)
 "let g:phpqa_messdetector_autorun = 0
