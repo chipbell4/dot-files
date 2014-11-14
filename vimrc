@@ -33,10 +33,12 @@ set wildignore+=*/node_modules/**
 " Linting stuff
 :function Lint()
 :if &ft == 'php'
-:!phpcs --standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml %
-":!php -l %
+:    !phpcs --standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml %
+":    !php -l %
 :elseif &ft == 'javascript'
-:!jshint %
+:    !jshint %
+:elseif &ft == 'python'
+:    !pylint %
 :endif
 :endfunction
 
