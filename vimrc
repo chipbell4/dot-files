@@ -73,6 +73,7 @@ let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/c
 :nnoremap <leader>gs :!git status<CR>
 :nnoremap <leader>gc :!git commit<CR>
 :nnoremap <leader>ga :!git add %<CR>
+:nnoremap <leader>gd :!git diff %<CR>
 
 :set expandtab ts=4 sw=4
 
