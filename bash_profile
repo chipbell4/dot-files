@@ -45,3 +45,6 @@ if [ -f ~/.profile ]; then
 	source ~/.profile
 fi
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PATH=$PATH:~/bin
