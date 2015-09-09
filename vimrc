@@ -1,8 +1,8 @@
 " Some basic configs
 set number
 syntax on
-set shiftwidth=3
-set tabstop=3
+set shiftwidth=2
+set tabstop=2
 colo koehler
 set nowrap
 
@@ -70,11 +70,12 @@ let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/c
 :nnoremap <leader>cf :exe CodeceptSingle()<CR>
 
 " Git commands
+:nnoremap <leader>gd :!git diff %<CR>
 :nnoremap <leader>gs :!git status<CR>
 :nnoremap <leader>gc :!git commit<CR>
 :nnoremap <leader>ga :!git add %<CR>
 
-:set expandtab ts=4 sw=4
+:set expandtab
 
 " Don't run messdetector on save (default = 1)
 "let g:phpqa_messdetector_autorun = 0
