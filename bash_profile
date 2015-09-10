@@ -38,7 +38,10 @@ if [ -f .bash/git-flow-completion.bash ]; then
 	. .bash/git-flow-completion.bash
 fi
 
-PS1="\[\033[0;36m\]\W\[\033[0m\] \[\033[0;34m\]\t\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
+working_dir="\[\033[0;36m\]\W\[\033[0m\]"
+current_time="\[\033[0;34m\]\t\[\033[0m\]"
+branch="\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\]"
+PS1="$working_dir $current_time $branch \$ "
 
 # if i've defined a extra profile file, source that as well
 if [ -f ~/.profile ]; then
