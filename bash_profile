@@ -38,7 +38,7 @@ if [ -f .bash/git-flow-completion.bash ]; then
 	. .bash/git-flow-completion.bash
 fi
 
-PS1="\[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
+PS1="\[\033[0;36m\]\W\[\033[0m\] \[\033[0;34m\]\t\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 # if i've defined a extra profile file, source that as well
 if [ -f ~/.profile ]; then
