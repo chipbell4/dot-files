@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function long-dir-name {
+  pwd | rev | cut -d'/' -f1-2 | rev
+}
+
 function git-branch-name {
  git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3,4
 }
@@ -38,10 +42,16 @@ if [ -f .bash/git-flow-completion.bash ]; then
 	. .bash/git-flow-completion.bash
 fi
 
-PS1="\[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
+working_dir="\[\033[0;36m\]\$(long-dir-name)\[\033[0m\]"
+current_time="\[\033[0;34m\]\t\[\033[0m\]"
+branch="\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\]"
+PS1="$working_dir $current_time $branch \$ "
 
 # if i've defined a extra profile file, source that as well
 if [ -f ~/.profile ]; then
 	source ~/.profile
 fi
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PATH=$PATH:~/bin
