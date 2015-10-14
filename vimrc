@@ -1,8 +1,9 @@
 " Some basic configs
 set number
 syntax on
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 colo koehler
 set nowrap
 
