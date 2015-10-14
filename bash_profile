@@ -55,3 +55,6 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PATH=$PATH:~/bin
+
+export NVM_DIR="/Users/cbell/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
