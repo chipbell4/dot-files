@@ -82,3 +82,4 @@ let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/c
 
 " Don't run codesniffer on save (default = 1)
 "let g:phpqa_codesniffer_autorun = 0
+set t_Co=256
