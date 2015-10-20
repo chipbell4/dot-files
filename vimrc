@@ -5,6 +5,7 @@ set shiftwidth=4
 set tabstop=4
 colo koehler
 set nowrap
+set expandtab
 
 " Set tabbing to be 2 for JS only
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -36,12 +37,6 @@ set wildignore+=*/vendor/**
 set wildignore+=*/build/**
 set wildignore+=*/node_modules/**
 
-" Use PSR2 for codesniffer
-let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/code_sniffs/src/Spinen/ruleset.xml"
-
-" PHP code helpers
-:nnoremap <leader>d :exe PhpDoc()<CR>
-
 " Git commands
 :nnoremap <leader>gd :!git diff %<CR>
 :nnoremap <leader>gs :!git status<CR>
@@ -49,11 +44,5 @@ let g:phpqa_codesniffer_args = "--standard=/Users/chip/.composer/vendor/spinen/c
 :nnoremap <leader>ga :!git add %<CR>
 :nnoremap <leader>gd :!git diff %<CR>
 
-:set expandtab
-
-" Don't run messdetector on save (default = 1)
-"let g:phpqa_messdetector_autorun = 0
-
-" Don't run codesniffer on save (default = 1)
-"let g:phpqa_codesniffer_autorun = 0
+" Configs to make tmux happy
 set t_Co=256
