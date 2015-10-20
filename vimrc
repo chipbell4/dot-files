@@ -3,9 +3,14 @@ set number
 syntax on
 set shiftwidth=4
 set tabstop=4
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 colo koehler
 set nowrap
+
+" Set tabbing to be 2 for JS only
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" Highlight json files as javascript
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 let mapleader = ","    
 
