@@ -25,12 +25,7 @@ function serve {
 		port="1337"
 	fi
 
-	if [ -z "$(php -v | grep 5.4)" ]; then 
-		# Don't have PHP 5.4 installed, so we use the Python server instead
-		python -m SimpleHTTPServer $port
-	else 
-		php -S localhost:$port
-	fi
+    php -S localhost:$port
 }
 
 # add git completion
