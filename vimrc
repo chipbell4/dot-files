@@ -36,6 +36,7 @@ set laststatus=2
 set wildignore+=*/vendor/**
 set wildignore+=*/build/**
 set wildignore+=*/node_modules/**
+set wildignore+=*/components/**
 
 " Git commands
 :nnoremap <leader>gd :!git diff %<CR>
