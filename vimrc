@@ -36,7 +36,6 @@ set laststatus=2
 set wildignore+=*/vendor/**
 set wildignore+=*/build/**
 set wildignore+=*/node_modules/**
-set wildignore+=*/components/**
 
 " Git commands
 :nnoremap <leader>gd :!git diff %<CR>
@@ -44,6 +43,7 @@ set wildignore+=*/components/**
 :nnoremap <leader>gc :!git commit<CR>
 :nnoremap <leader>ga :!git add %<CR>
 :nnoremap <leader>gd :!git diff %<CR>
+:nnoremap <leader>nt :!npm test<CR>
 
 " Configs to make tmux happy
 set t_Co=256
